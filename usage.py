@@ -1,24 +1,27 @@
-import dash_chartist
+from dash_chartist import DashChartist
 import dash
-from dash.dependencies import Input, Output
-import dash_html_components as html
+from dash import  html
 
 app = dash.Dash(__name__)
 
+
+data = {
+    "labels": ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
+    "series": [ [1, 2, 4, 8, 6, -2, -1, -4, -6, -2] ]
+}
+
+options = {
+    "high": 10,
+    "low": -10,
+}
+
+chartType = 'Bar'
+
 app.layout = html.Div([
-    dash_chartist.DashChartist(
-        id='input',
-        value='my-value',
-        label='my-label'
-    ),
-    html.Div(id='output')
+    DashChartist(type=chartType, options=options, data=data)
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
-
-
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    print("*** Visit http://default:6003/ ***")
+    app.run_server(debug=False, host="0.0.0.0", port=5000, dev_tools_serve_dev_bundles=True)

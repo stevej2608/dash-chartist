@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+
+import ChartistGraph from 'react-chartist';
 
 /**
  * ExampleComponent is an example component.
@@ -9,53 +12,58 @@ import PropTypes from 'prop-types';
  * which is editable by the user.
  */
 export default class DashChartist extends Component {
-    render() {
-        const {id, label, setProps, value} = this.props;
-
-        return (
-            <div id={id}>
-                ExampleComponent: {label}&nbsp;
-                <input
-                    value={value}
-                    onChange={
-                        /*
-                         * Send the new value to the parent component.
-                         * setProps is a prop that is automatically supplied
-                         * by dash's front-end ("dash-renderer").
-                         * In a Dash app, this will update the component's
-                         * props and send the data back to the Python Dash
-                         * app server if a callback uses the modified prop as
-                         * Input or State.
-                         */
-                        e => setProps({ value: e.target.value })
-                    }
-                />
-            </div>
-        );
-    }
+  render() {
+    console.log("DashChartist,render()")
+    const { id, setProps, ...chartProps } = this.props;
+    return (
+      <ChartistGraph {...chartProps} />
+    );
+  }
 }
 
 DashChartist.defaultProps = {};
 
 DashChartist.propTypes = {
-    /**
-     * The ID used to identify this component in Dash callbacks.
-     */
-    id: PropTypes.string,
+  /**
+   * The ID used to identify this component in Dash callbacks.
+   */
+  id: PropTypes.string,
 
-    /**
-     * A label that will be printed when this component is rendered.
-     */
-    label: PropTypes.string.isRequired,
+  /**
+   * The chart type
+   */
+  type: PropTypes.oneOf(['Line', 'Bar', 'Pie']).isRequired,
 
-    /**
-     * The value displayed in the input.
-     */
-    value: PropTypes.string,
+  /**
+   * Chart data
+   */
+  data: PropTypes.object.isRequired,
 
-    /**
-     * Dash-assigned callback that should be called to report property changes
-     * to Dash, to make them available for callbacks.
-     */
-    setProps: PropTypes.func
+  /**
+   * Often used with CSS to style elements with common properties.
+   */
+  className: PropTypes.string,
+
+  /**
+   * The options object with options that override the default
+   * options. Check the examples for a detailed list.
+   */
+  options: PropTypes.object,
+
+  /**
+   * Specify an array of responsive option arrays which are a
+   * media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
+   */
+  responsiveOptions: PropTypes.array,
+
+  /**
+   * Defines CSS styles which will override styles previously set.
+   */
+  style: PropTypes.object,
+
+  /**
+   * Dash-assigned callback that should be called to report property changes
+   * to Dash, to make them available for callbacks.
+   */
+  setProps: PropTypes.func
 };
