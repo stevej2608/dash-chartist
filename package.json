@@ -19,7 +19,9 @@
   "author": "Stave Jones <jonesst2608@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "ramda": "^0.26.1"
+    "chartist": "^0.11.4",
+    "ramda": "^0.26.1",
+    "react-chartist": "^0.14.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
