@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import ChartistGraph from 'react-chartist';
 
 /**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
+ * Wrapper for react-chartist library. For API and
+ * examples see:
+ *
+ * https://github.com/fraserxu/react-chartist
+ *
+ * https://gionkunz.github.io/chartist-js/index.html
  */
 export default class DashChartist extends Component {
   render() {
