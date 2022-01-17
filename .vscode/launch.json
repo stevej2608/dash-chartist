@@ -23,14 +23,20 @@
         "action": "openExternally"
       }
     },
-    {
-      "name": "2. Python: Current File",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "internalConsole",
-      "internalConsoleOptions": "openOnSessionStart",
-    },
 
+    // Debug component JS source. Start dash app in terminal window
+    // then launch debugger
+
+    {
+      "type": "pwa-chrome",
+      "name": "2. Debug component JS in Browser",
+      "request": "launch",
+      "url": "http://default:6003/",
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}",
+      "resolveSourceMapLocations": [
+        "dash_chartist/**/*.js"
+      ],
+    },
   ]
 }

@@ -67,12 +67,12 @@ _js_dist.extend(
     [
         {
             'relative_package_path': 'dash_chartist.min.js',
-    
+            'dev_package_path': 'dash_chartist.dev.js',
             'namespace': package_name
         },
         {
             'relative_package_path': 'dash_chartist.min.js.map',
-    
+            'dev_package_path': 'dash_chartist.dev.js.map',
             'namespace': package_name,
             'dynamic': True
         }
