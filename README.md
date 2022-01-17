@@ -1,6 +1,6 @@
 ## dash-chartist
 
- Dash wrapper for chartist library
+ Dash wrapper for [react-chartist](https://github.com/fraserxu/react-chartist) library
 
 ## Usage
 
@@ -25,4 +25,8 @@ In a terminal window start the dash application:
 Select debugger launch *1: JS Browser* and press F5. The chrome browser
 will open and display your application. Enter breakpoints in the source
 code eg *./src/lib/components/DashDatatables.react.js* as required.
+
+### Links
+
+
 

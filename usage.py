@@ -2,7 +2,11 @@ from dash_chartist import DashChartist
 import dash
 from dash import  html
 
-app = dash.Dash(__name__)
+external_stylesheets = [
+    "https://cdnjs.cloudflare.com/ajax/libs/chartist/0.3.1/chartist.min.css",
+    ]
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 
 data = {
