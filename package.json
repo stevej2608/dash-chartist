@@ -1,6 +1,6 @@
 {
   "name": "dash_chartist",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dash wrapper for chartist library",
   "main": "build/index.js",
   "scripts": {

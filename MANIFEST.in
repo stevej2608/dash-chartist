@@ -1,5 +1,7 @@
 include dash_chartist/dash_chartist.min.js
 include dash_chartist/dash_chartist.min.js.map
+include dash_chartist/dash_chartist.dev.js
+include dash_chartist/dash_chartist.dev.js.map
 include dash_chartist/async-*.js
 include dash_chartist/async-*.js.map
 include dash_chartist/*-shared.js
