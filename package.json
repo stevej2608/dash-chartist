@@ -1,6 +1,6 @@
 {
   "name": "dash_chartist",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Dash wrapper for chartist library",
   "main": "build/index.js",
   "scripts": {
@@ -20,6 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "chartist": "^0.11.4",
+    "chartist-plugin-tooltip": "0.0.11",
+    "chartist-plugin-tooltips-updated": "^0.1.4",
     "ramda": "^0.26.1",
     "react-chartist": "^0.14.4"
   },

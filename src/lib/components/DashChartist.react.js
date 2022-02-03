@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import ChartistGraph from 'react-chartist';
+import ChartistTooltip from 'chartist-plugin-tooltips-updated';
+
 
 /**
  * Wrapper for react-chartist library. For API and
@@ -15,6 +17,16 @@ export default class DashChartist extends Component {
   render() {
     console.log("DashChartist,render()")
     const { id, setProps, ...chartProps } = this.props;
+
+    // https://github.com/LukBukkit/chartist-plugin-tooltip
+
+    if (chartProps.tooltips){
+      chartProps.options.plugins = [
+        ChartistTooltip()
+      ]
+    }
+
+
     return (
       <ChartistGraph {...chartProps} />
     );
@@ -49,6 +61,12 @@ DashChartist.propTypes = {
    * options. Check the examples for a detailed list.
    */
   options: PropTypes.object,
+
+  /**
+   * Set true to enable tooltips
+   */
+
+  tooltips: PropTypes.bool,
 
   /**
    * Specify an array of responsive option arrays which are a
