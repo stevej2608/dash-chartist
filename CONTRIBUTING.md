@@ -28,7 +28,7 @@ To install the tarball in a dash project:
 
 Upload to pypi:
 
-    twine pypicloud dist/*
+    twine upload dist/*
 
 Or to a local repo:
 
